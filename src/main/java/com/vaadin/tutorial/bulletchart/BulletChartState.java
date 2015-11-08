@@ -2,10 +2,13 @@ package com.vaadin.tutorial.bulletchart;
 
 import com.vaadin.shared.ui.JavaScriptComponentState;
 
-/**
- * Created by gerald on 07/11/15.
- */
 public class BulletChartState extends JavaScriptComponentState {
-    public int value = 0;
     public String domId;
+
+    public String title = "xRevenue";
+    public String subtitle = "xUS$, in thousands";
+    public int[] ranges = new int [] {150, 225, 300};
+    public int[] measures = new int[]{220};
+    public int[] markers = new int[]{250};
+
 }

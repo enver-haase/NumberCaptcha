@@ -1,12 +1,19 @@
 com_vaadin_tutorial_bulletchart_BulletChart = function() {
-        var domId = this.getState().domId;
-        var value = this.getState().value;
 
+        var e = this.getElement();
+
+        e.innerHTML = getState().title;
+
+        this.onStateChange = function() {
+          e.innerHTML = "state changed";
+        }
+
+/*
         nv.addGraph(function() {
           var chart = nv.models.bulletChart();
 
-          d3.select('#bullet_chart')
-              .datum(exampleData())
+          d3.select(this.getState().domId)
+              .datum(getData())
               .transition().duration(1000)
               .call(chart);
 
@@ -14,14 +21,14 @@ com_vaadin_tutorial_bulletchart_BulletChart = function() {
         });
 
 
-        function exampleData() {
+        function getData() {
             return {
-                "title": "Revenue",		//Label the bullet chart
-                "subtitle": "US$, in thousands",		//sub-label for bullet chart
-                "ranges": [150, 225, 300],	 //Minimum, mean and maximum values.
-                "measures": [220],		 //Value representing current measurement (the thick blue line in the example)
-                "markers": [250]			 //Place a marker on the chart (the white triangle marker)
+                "title": this.getState().title,
+                "subtitle": this.getState().subtitle,
+                "ranges": this.getState().ranges,
+                "measures": this.getState().measures,
+                "markers": this.getState.markers
             }
         };
-
+*/
 };
