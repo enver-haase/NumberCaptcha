@@ -4,39 +4,25 @@ import com.vaadin.annotations.Title;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.tutorial.playground.JsLabel;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.VerticalLayout;
 
 import javax.servlet.annotation.WebServlet;
 
 @Title("Bulletchart")
 public class BulletchartUI extends UI {
 
-    BulletChart bulletChart;
+    BulletChart bulletChart = new BulletChart("bullet_chart");
 
     @Override
     protected void init(VaadinRequest request) {
-        bulletChart = new BulletChart("bullet_chart");
+        VerticalLayout content = new VerticalLayout();
+        setContent(content);
 
-        bulletChart.setTitle("Revenue");
-        bulletChart.setSubtitle("US$, in thousands");
-        bulletChart.setRanges(new int [] {150, 225, 300});
-        bulletChart.setMeasures(new int[]{220});
-        bulletChart.setMarkers(new int[]{250});
-
-        bulletChart.setSizeFull();
-
-        HorizontalLayout mainLayout = new HorizontalLayout(bulletChart);
-        mainLayout.setWidth("100%");
-        bulletChart.setWidth("100%");
-        mainLayout.setExpandRatio(bulletChart, 1);
-
-        mainLayout.setSizeFull();
-
-        setContent(bulletChart);
-        bulletChart.setVisible(true);
+        content.addComponent(bulletChart);
+        //content.addComponent(new JsLabel("Hello!"));
     }
-
 
     @WebServlet(urlPatterns = "/*")
     @VaadinServletConfiguration(ui = BulletchartUI.class, productionMode = false)
