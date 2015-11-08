@@ -4,9 +4,9 @@ import com.vaadin.annotations.JavaScript;
 import com.vaadin.ui.AbstractJavaScriptComponent;
 
 @JavaScript({
-        "com_vaadin_tutorial_bulletchart_BulletChart.js",
+        "http://d3js.org/d3.v3.min.js",
         "https://cdn.rawgit.com/novus/nvd3/v1.8.1/build/nv.d3.js",
-        "http://d3js.org/d3.v3.min.js"
+        "com_vaadin_tutorial_bulletchart_BulletChart.js"
 })
 public class BulletChart extends AbstractJavaScriptComponent {
 
