@@ -12,9 +12,14 @@ import com.vaadin.ui.AbstractJavaScriptComponent;
 })
 public class BulletChart extends AbstractJavaScriptComponent {
 
-    public BulletChart(String domId) {
-        getState().domId = domId;
-    }
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1213833898353675122L;
+
+	public BulletChart(String title) {
+		getState().title = title;
+	}
 
     public void setTitle(String title) {
         getState().title = title;

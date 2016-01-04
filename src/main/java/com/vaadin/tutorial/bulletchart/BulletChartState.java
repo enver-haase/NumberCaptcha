@@ -3,7 +3,10 @@ package com.vaadin.tutorial.bulletchart;
 import com.vaadin.shared.ui.JavaScriptComponentState;
 
 public class BulletChartState extends JavaScriptComponentState {
-    public String domId;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7421689875171064265L;
 
     public String title = "xRevenue";
     public String subtitle = "xUS$, in thousands";
