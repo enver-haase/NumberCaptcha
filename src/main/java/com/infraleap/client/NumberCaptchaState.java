@@ -3,21 +3,10 @@ package com.infraleap.client;
 import com.vaadin.shared.ui.JavaScriptComponentState;
 
 public class NumberCaptchaState extends JavaScriptComponentState {
-    int numDigits = 5;
-    int displayTimerMs = 500;
+    public int numDigits = 5;
+    public int displayTimerMs = 500;
 
-    String enterDigitPre = "Enter digit for '";
+    public String enterDigit = "Please enter digit number %d for '%s' below.";
 
-    String displayString0 = "ZERO";
-    String displayString1 = "ONE";
-    String displayString2 = "TWO";
-    String displayString3 = "THREE";
-    String displayString4 = "FOUR";
-    String displayString5 = "FIVE";
-    String displayString6 = "SIX";
-    String displayString7 = "SEVEN";
-    String displayString8 = "EIGHT";
-    String displayString9 = "NINE";
-
-    String enterDigitPost = "' below.";
+    public String[] digitNames = {"ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
 }
