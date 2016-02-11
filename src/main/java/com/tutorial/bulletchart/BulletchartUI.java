@@ -1,12 +1,13 @@
-package com.vaadin.tutorial.bulletchart;
+package com.tutorial.bulletchart;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.infraleap.NumberCaptcha;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.tutorial.playground.JsLabel;
+import com.tutorial.playground.JsLabel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
@@ -27,11 +28,14 @@ public class BulletchartUI extends UI {
         chart.setWidth("400px");
         chart.setHeight("200px");
         content.addComponent(chart);
+
         content.addComponent(new JsLabel("Hello!"));
+
+        content.addComponent(new NumberCaptcha());
     }
 
     @WebServlet(urlPatterns = "/*")
-    @VaadinServletConfiguration(ui = BulletchartUI.class, productionMode = false)
+    @VaadinServletConfiguration(ui = BulletchartUI.class, productionMode = false, widgetset = "com.infraleap.NumberCaptchaWidgetSet")
     public static class MyUIServlet extends VaadinServlet {
 
 		/**

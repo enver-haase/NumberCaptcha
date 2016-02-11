@@ -1,4 +1,4 @@
-package com.vaadin.tutorial.playground;
+package com.tutorial.playground;
 
 import com.vaadin.shared.ui.JavaScriptComponentState;
 

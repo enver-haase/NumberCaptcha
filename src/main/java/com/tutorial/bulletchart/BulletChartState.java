@@ -1,4 +1,4 @@
-package com.vaadin.tutorial.bulletchart;
+package com.tutorial.bulletchart;
 
 import com.vaadin.shared.ui.JavaScriptComponentState;
 
