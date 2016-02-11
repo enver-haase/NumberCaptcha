@@ -1,12 +1,12 @@
-com_vaadin_tutorial_bulletchart_BulletChart = function() {
+com_tutorial_bulletchart_BulletChart = function() {
 	var bulletchart = document.createElement('div');
     bulletchart.setAttribute('id', 'bullet_chart');
-    bulletchart.style.width = "100%"
-    bulletchart.style.height = "100%"
+    bulletchart.style.width = "100%";
+    bulletchart.style.height = "100%";
     this.getElement().appendChild(bulletchart);
     var svg = d3.select("#bullet_chart").append("svg")
     	.attr("width", '100%')
-    	.attr("height", '100%')
+    	.attr("height", '100%');
 
     this.onStateChange = function() {
     	var that = this;
@@ -20,7 +20,7 @@ com_vaadin_tutorial_bulletchart_BulletChart = function() {
           
           return chart;
         });
-    }
+    };
 
 	function stateData(that) {
 		return {
@@ -33,4 +33,4 @@ com_vaadin_tutorial_bulletchart_BulletChart = function() {
 	}
 	
 	
-}
+};

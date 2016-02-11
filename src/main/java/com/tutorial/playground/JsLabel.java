@@ -1,9 +1,9 @@
-package com.vaadin.tutorial.playground;
+package com.tutorial.playground;
 
 import com.vaadin.annotations.JavaScript;
 import com.vaadin.ui.AbstractJavaScriptComponent;
 
-@JavaScript({ "com_vaadin_tutorial_playground_JsLabel.js" })
+@JavaScript({ "com_tutorial_playground_JsLabel.js" })
 public class JsLabel extends AbstractJavaScriptComponent {
 
     public JsLabel(String xhtml) {
