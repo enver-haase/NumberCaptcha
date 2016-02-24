@@ -24,7 +24,7 @@ public class NoRobotsUI extends UI {
         VerticalLayout content = new VerticalLayout();
         setContent(content);
 
-        content.addComponent(new NumberCaptcha(5, 5000){
+        content.addComponent(new NumberCaptcha(4, 3000, "Pos %d, enter %s as a digit", "Hit RETURN to continue when finished.") {
             @Override
             public void captchaGood() {
                 Notification.show("Good, you are a human being. Thanks.");

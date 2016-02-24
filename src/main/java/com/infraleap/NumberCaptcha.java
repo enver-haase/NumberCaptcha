@@ -14,26 +14,35 @@ import elemental.json.JsonArray;
 @JavaScript({ "com_infraleap_NumberCaptcha.js" })
 public abstract class NumberCaptcha extends AbstractJavaScriptComponent {
 
-    public NumberCaptcha(int numDigits, int millisecs, String... enterStringAndDigitNames){
+    /**
+     * Creates a NumberCaptcha object.
+     *
+     * @param numDigits how many digits will the user be asked to translate?
+     * @param millisecs time to change display from one number to the next, in milliseconds
+     * @param enterStringAndPressReturnAndDigitNames strings to be displayed for the header, the footer and the digits. Can be left away so that English standard texts are used. Otherwise exactly two or twelve strings must be given as header & footer or as header & footer & digit-names (starting from 'zero', going to 'ten') respectively. The header string should use the placeholders %d (place of the digit to translate) and %s (name of the digit to translate).
+     */
+    public NumberCaptcha(int numDigits, int millisecs, String... enterStringAndPressReturnAndDigitNames){
 
         getState().numDigits = numDigits;
         getState().displayTimerMs = millisecs;
-        if (enterStringAndDigitNames.length > 0) {
-            getState().enterDigit = enterStringAndDigitNames[0];
+        if (enterStringAndPressReturnAndDigitNames.length > 1) {
+            getState().enterDigit = enterStringAndPressReturnAndDigitNames[0];
+            getState().returnKeyWhenDone = enterStringAndPressReturnAndDigitNames[1];
         }
-        if (enterStringAndDigitNames.length == 11){
+
+        if (enterStringAndPressReturnAndDigitNames.length == 12){
             for (int i=0; i<10; i++){
-                getState().digitNames[i] = enterStringAndDigitNames[i+1];
+                getState().digitNames[i] = enterStringAndPressReturnAndDigitNames[i+2];
             }
         }
-        if (enterStringAndDigitNames.length != 0 && enterStringAndDigitNames.length != 1 && enterStringAndDigitNames.length != 11){
-            throw new IllegalArgumentException("Please provide names for exactly 10 digits, or none at all for English standard names.");
+        if (enterStringAndPressReturnAndDigitNames.length != 0 && enterStringAndPressReturnAndDigitNames.length != 2 && enterStringAndPressReturnAndDigitNames.length != 12){
+            throw new IllegalArgumentException("Please provide 12 strings providing headline, footer and names for exactly 10 digits, or two strings for just header and footer, or no strings at all for English standard texts.");
         }
 
         this.addStyleName("com_infraleap_vaadin_NumberCaptcha");
 
-        this.setWidth("400px");
-        this.setHeight("200px");
+        this.setWidth("500px");
+        this.setHeight("500px");
 
         this.addFunction("captchaOkay", new JavaScriptFunction() {
             @Override
