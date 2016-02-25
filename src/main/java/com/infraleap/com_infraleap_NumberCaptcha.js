@@ -67,7 +67,7 @@ com_infraleap_NumberCaptcha = function() {
         self.getElement().innerHTML = "<h1>" + displayString + "</h1>";
         self.getElement().appendChild(inputField);
         var h3 = document.createElement("h3");
-        h3.innerText = displayPostfix;
+        h3.textContent = displayPostfix;
         self.getElement().appendChild(h3);
         inputField.focus();
     }
