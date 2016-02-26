@@ -41,9 +41,6 @@ public abstract class NumberCaptcha extends AbstractJavaScriptComponent {
 
         this.addStyleName("com_infraleap_vaadin_NumberCaptcha");
 
-        this.setWidth("500px");
-        this.setHeight("500px");
-
         this.addFunction("captchaOkay", new JavaScriptFunction() {
             @Override
             public void call(JsonArray arguments) {
