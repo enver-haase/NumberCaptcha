@@ -1,6 +1,6 @@
 
-NoRobots
-========
+NumberCaptcha
+=============
 
 A Captcha Vaadin Component implemented in JavaScript
 ----------------------------------------------------
