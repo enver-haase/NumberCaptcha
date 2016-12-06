@@ -3,14 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.infraleap</groupId>
-	<artifactId>numbercaptcha-root</artifactId>
+	<artifactId>zendesk-root</artifactId>
 	<packaging>pom</packaging>
 	<version>0.9</version>
-	<name>NumberCaptcha Add-on Root Project</name>
+	<name>ZenDesk Vaadin Support Add-On Root Project</name>
 
 	<modules>
-		<module>numbercaptcha</module>
-		<module>numbercaptcha-demo</module>
+		<module>zendesk</module>
+		<module>zendesk-demo</module>
 	</modules>
 
 	<profiles>
