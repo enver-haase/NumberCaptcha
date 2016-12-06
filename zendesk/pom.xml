@@ -3,16 +3,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.infraleap</groupId>
-	<artifactId>numbercaptcha</artifactId>
+	<artifactId>zendesk</artifactId>
 	<packaging>jar</packaging>
 	<version>0.9</version>
-	<name>NumberCaptcha Add-on</name>
+	<name>ZenDesk Vaadin Support Add-on</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<vaadin.version>7.6.3</vaadin.version>
+		<vaadin.version>7.7.5</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 
 		<!-- ZIP Manifest fields -->
@@ -23,25 +23,6 @@
 		<Vaadin-License-Title>Apache License 2.0</Vaadin-License-Title>
 		<Vaadin-Addon>${artifactId}-${project.version}.jar</Vaadin-Addon>
 	</properties>
-
-    <!--     
-	<organization>
-		<name>My Name</name>
-		<url>https://github.com/mygithubaccount/NumberCaptcha/</url>
-	</organization>
-    
-	<scm>
-		<url>git://github.com/mygithubaccount/NumberCaptcha.git</url>
-		<connection>scm:git:git://github.com/mygithubaccount/NumberCaptcha.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:/mygithubaccount/${ComponentClassName}.git</developerConnection>
-		<tag>NumberCaptcha add-on for Vaadin</tag>
-	</scm>
-
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/mygithubaccount/NumberCaptcha/issues</url>
-	</issueManagement>
-    -->
 
 	<licenses>
 		<license>
@@ -127,7 +108,7 @@
 							<!-- Package format version - do not change -->
 							<Vaadin-Package-Version>1</Vaadin-Package-Version>
 							<Vaadin-License-Title>${Vaadin-License-Title}</Vaadin-License-Title>
-							<Vaadin-Widgetsets>com.infraleap.numbercaptcha.WidgetSet</Vaadin-Widgetsets>
+							<Vaadin-Widgetsets>com.infraleap.zendesk.WidgetSet</Vaadin-Widgetsets>
 						</manifestEntries>
 					</archive>
 				</configuration>

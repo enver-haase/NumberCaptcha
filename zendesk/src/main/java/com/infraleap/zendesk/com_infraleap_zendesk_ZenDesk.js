@@ -1,4 +1,4 @@
-com_infraleap_numbercaptcha_NumberCaptcha = function() {
+com_infraleap_zendesk_ZenDesk = function() {
 
     // "globals"
 
