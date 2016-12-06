@@ -3,38 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.infraleap</groupId>
-	<artifactId>numbercaptcha-demo</artifactId>
+	<artifactId>zendesk-demo</artifactId>
 	<packaging>war</packaging>
 	<version>0.9</version>
-	<name>NumberCaptcha Add-on Demo</name>
+	<name>ZenDesk Vaadin Support Add-on Demo</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<vaadin.version>7.6.3</vaadin.version>
+		<vaadin.version>7.7.5</vaadin.version>
 		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<jetty.plugin.version>9.2.3.v20140905</jetty.plugin.version>
 	</properties>
-
-    <!--     
-	<organization>
-		<name>My Name</name>
-		<url>https://github.com/mygithubaccount/NumberCaptcha/</url>
-	</organization>
-    
-	<scm>
-		<url>git://github.com/mygithubaccount/NumberCaptcha.git</url>
-		<connection>scm:git:git://github.com/mygithubaccount/NumberCaptcha.git</connection>
-		<developerConnection>scm:git:ssh://git@github.com:/mygithubaccount/${ComponentClassName}.git</developerConnection>
-		<tag>NumberCaptcha add-on for Vaadin</tag>
-	</scm>
-
-	<issueManagement>
-		<system>GitHub</system>
-		<url>https://github.com/mygithubaccount/NumberCaptcha/issues</url>
-	</issueManagement>
-    -->
 
 	<licenses>
 		<license>
@@ -89,7 +70,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.infraleap</groupId>
-			<artifactId>numbercaptcha</artifactId>
+			<artifactId>zendesk</artifactId>
 			<version>${version}</version>
 		</dependency>
 		<dependency>
@@ -171,7 +152,6 @@
 					<noServer>true</noServer>
 					<persistentunitcachedir>${basedir}/target/tmp/gwt-unitCache</persistentunitcachedir>
 					<compileReport>true</compileReport>
-					<strict>true</strict>
 					<runTarget>http://localhost:8080/</runTarget>
 				</configuration>
 				<executions>
@@ -197,6 +177,8 @@
 				<version>${jetty.plugin.version}</version>
 				<configuration>
 					<scanIntervalSeconds>2</scanIntervalSeconds>
+					<stopKey>foo</stopKey>
+					<stopPort>9999</stopPort>
 				</configuration>
 			</plugin>
 

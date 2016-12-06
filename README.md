@@ -1,13 +1,13 @@
 
-NumberCaptcha
-=============
+ZenDesk Vaadin Support Add-On
+=============================
 
-A Captcha Vaadin Component implemented in JavaScript
-----------------------------------------------------
+A Proof-of-Concept ZenDesk Support Add-On supplying functionality for Vaadin Support Staff
+------------------------------------------------------------------------------------------
 
-This is a skeleton project that is pretty much the minimum of what needs to be done to have a Shared State to be used from the Vaadin Component that represents the widget rendered on the client side in the browser, and the client-to-server RPC.
+This is a simple in-house project to be integrated into ZenDesk Support to test-drive that product.
 
 Questions?
 
 Enver Haase <enver@vaadin.com>
-20160218
+20171206
