@@ -1,8 +1,8 @@
-package com.infraleap.zendesk.client;
+package com.infraleap.numbercaptcha.client;
 
 import com.vaadin.shared.ui.JavaScriptComponentState;
 
-public class ZenDeskState extends JavaScriptComponentState {
+public class NumberCaptchaState extends JavaScriptComponentState {
     public int numDigits = 5;
     public int displayTimerMs = 2000;
 

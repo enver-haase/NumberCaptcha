@@ -1,6 +1,6 @@
-package com.infraleap.zendesk;
+package com.infraleap.numbercaptcha;
 
-import com.infraleap.zendesk.client.ZenDeskState;
+import com.infraleap.numbercaptcha.client.NumberCaptchaState;
 import com.vaadin.annotations.JavaScript;
 import com.vaadin.annotations.StyleSheet;
 import com.vaadin.ui.AbstractJavaScriptComponent;
@@ -10,18 +10,18 @@ import elemental.json.JsonArray;
 /**
  * https://vaadin.com/blog/-/blogs/vaadin-7-loves-javascript-components
  */
-@StyleSheet("com_infraleap_zendesk_ZenDesk.css")
-@JavaScript({ "com_infraleap_zendesk_ZenDesk.js" })
-public abstract class ZenDesk extends AbstractJavaScriptComponent {
+@StyleSheet("com_infraleap_numbercaptcha_NumberCaptcha.css")
+@JavaScript({ "com_infraleap_numbercaptcha_NumberCaptcha.js" })
+public abstract class NumberCaptcha extends AbstractJavaScriptComponent {
 
 	/**
-	 * Creates a ZenDesk object.
+	 * Creates a NumberCaptcha object.
 	 *
 	 * @param numDigits how many digits will the user be asked to translate?
 	 * @param millisecs time to change display from one number to the next, in milliseconds.
 	 * @param enterStringAndPressReturnAndDigitNames strings to be displayed for the header, the footer and the digits. Can be left away so that English standard texts are used. Otherwise exactly two or twelve strings must be given as header &amp; footer or as header &amp; footer &amp; digit-names (starting from 'zero', going to 'ten') respectively. The header string should use the placeholders %d (place of the digit to translate) and %s (name of the digit to translate).
 	 */
-	public ZenDesk(int numDigits, int millisecs, String... enterStringAndPressReturnAndDigitNames){
+	public NumberCaptcha(int numDigits, int millisecs, String... enterStringAndPressReturnAndDigitNames){
 
 		getState().numDigits = numDigits;
 		getState().displayTimerMs = millisecs;
@@ -39,7 +39,7 @@ public abstract class ZenDesk extends AbstractJavaScriptComponent {
 			throw new IllegalArgumentException("Please provide 12 strings providing headline, footer and names for exactly 10 digits, or two strings for just header and footer, or no strings at all for English standard texts.");
 		}
 
-		this.addStyleName("com_infraleap_vaadin_ZenDesk");
+		this.addStyleName("com_infraleap_vaadin_NumberCaptcha");
 
 		this.addFunction("captchaOkay", (JavaScriptFunction) arguments -> captchaGood());
 
@@ -53,8 +53,8 @@ public abstract class ZenDesk extends AbstractJavaScriptComponent {
 	}
 
 	@Override
-	protected ZenDeskState getState(){
-		return (ZenDeskState) super.getState();
+	protected NumberCaptchaState getState(){
+		return (NumberCaptchaState) super.getState();
 	}
 
 	public abstract void captchaGood();
