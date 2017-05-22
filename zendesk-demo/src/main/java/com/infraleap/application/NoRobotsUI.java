@@ -2,7 +2,7 @@ package com.infraleap.application;
 
 import javax.servlet.annotation.WebServlet;
 
-import com.infraleap.zendesk.ZenDesk;
+import com.infraleap.numbercaptcha.NumberCaptcha;
 import com.vaadin.annotations.Title;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.VaadinRequest;
@@ -24,8 +24,7 @@ public class NoRobotsUI extends UI {
         VerticalLayout content = new VerticalLayout();
         setContent(content);
 
-        content.addComponent(new ZenDesk(4, 3000, "Pos %d, enter %s as a " +
-                "digit", "Hit RETURN to continue when finished.") {
+        content.addComponent(new NumberCaptcha(4, 3000, "Pos %d, enter %s as a digit", "Hit RETURN to continue when finished.") {
             @Override
             public void captchaGood() {
                 Notification.show("Good, you are a human being. Thanks.");
@@ -39,8 +38,7 @@ public class NoRobotsUI extends UI {
     }
 
     @WebServlet(urlPatterns = "/*")
-    @VaadinServletConfiguration(ui = NoRobotsUI.class, productionMode =
-            false, widgetset = "com.infraleap.zendesk.demo.DemoWidgetSet")
+    @VaadinServletConfiguration(ui = NoRobotsUI.class, productionMode = false, widgetset = "com.infraleap.numbercaptcha.demo.DemoWidgetSet")
     public static class MyUIServlet extends VaadinServlet {
     }
 }
