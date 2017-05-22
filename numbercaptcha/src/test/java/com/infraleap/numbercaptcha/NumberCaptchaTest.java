@@ -1,10 +1,10 @@
-package com.infraleap.zendesk;
+package com.infraleap.numbercaptcha;
 
 import junit.framework.Assert;
 import org.junit.Test;
 
 // JUnit tests here
-public class ZenDeskTest {
+public class NumberCaptchaTest {
 
 	@Test
 	public void thisAlwaysPasses() {
